@@ -1,0 +1,8 @@
+case_id,post_id,timestamp,author,mentioned_person,location,content
+CG-2026-001,SOC-001,2026-02-14 20:30:00,Rohit Sharma,Vikas Patil,Andheri East,"Rohit and Vikas seen together outside a warehouse during late evening inspection."
+CG-2026-001,SOC-002,2026-02-17 21:15:00,Neha Kapoor,Vikas Patil,Chandivali,"Shared photo with Vikas and suspicious meeting crowd near material yard."
+CG-2026-001,SOC-003,2026-02-18 17:50:00,Vikas Patil,Rohit Sharma,Malad West,"Mentioned route planning with Rohit and logistics staff for dispatch."
+CG-2026-002,SOC-004,2026-03-08 19:10:00,Harsh Patel,Arjun Khanna,Goregaon,"Shared post about stolen scooter batch and vehicle swap logistics."
+CG-2026-002,SOC-005,2026-03-09 21:40:00,Rajesh Mali,Arjun Khanna,Lower Parel,"Vehicle plates changed and hidden in a warehouse compound."
+CG-2026-003,SOC-006,2026-04-04 18:25:00,Aditi Rao,Prateek Singh,Cyber City,"Fake loans and account verification requests circulated in group chat."
+CG-2026-003,SOC-007,2026-04-08 16:00:00,Raj Shah,Prateek Singh,Bandra,"Shared screenshot showing account verification and payout flow."

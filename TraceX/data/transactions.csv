@@ -1,0 +1,13 @@
+case_id,transaction_id,timestamp,sender,receiver,amount,description
+CG-2026-001,TXN-001,2026-02-13 07:30:00,Vikas Patil,Suresh Traders,50000,"Fictional payment for logistics and dispatch coordination."
+CG-2026-001,TXN-002,2026-02-14 08:15:00,Rohit Sharma,Vikas Patil,12000,"Short-term settlement between linked associates."
+CG-2026-001,TXN-003,2026-02-15 09:40:00,Anil Mehta,Suresh Traders,18000,"Cash movement tied to materials procurement."
+CG-2026-001,TXN-004,2026-02-16 19:05:00,Vikas Patil,Manish Shah,25000,"Transfer flagged during coordinated meeting sequence."
+CG-2026-001,TXN-005,2026-02-18 13:00:00,Rohit Sharma,Mehul Desai,8000,"Small transfer for route planning and logistics."
+CG-2026-002,TXN-006,2026-03-07 06:15:00,Harsh Patel,AutoLink Repair,15000,"Down payment for modified number plates and broken lock replacements."
+CG-2026-002,TXN-007,2026-03-08 16:20:00,Arjun Khanna,Harsh Patel,22000,"Vehicle handoff support payment."
+CG-2026-002,TXN-008,2026-03-09 14:30:00,Santosh Verma,AutoLink Repair,11000,"Payment linked to multiple stolen bike recovery operations."
+CG-2026-003,TXN-009,2026-04-02 16:10:00,Aditi Rao,QuickFin Services,12000,"Loan processing fee for shell application."
+CG-2026-003,TXN-010,2026-04-03 20:05:00,Prateek Singh,SecurePay Ltd,8500,"Merchant settlement for fake invoice approvals."
+CG-2026-003,TXN-011,2026-04-05 11:50:00,Raj Shah,QuickFin Services,16000,"Series of suspicious digital payouts."
+CG-2026-003,TXN-012,2026-04-07 15:10:00,Aditi Rao,SecurePay Ltd,22500,"Large suspected account transfer tied to fintech abuse."

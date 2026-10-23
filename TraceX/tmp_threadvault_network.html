@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@9.1.2/dist/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <style>
+      body { margin:0; padding:0; background:#0e1117; color:#e6eef3 }
+      #mynetwork { width: 100%; height: 650px; border: 1px solid rgba(255,255,255,0.06); }
+      .legend { color:#cbd5e1; font-family: Arial, sans-serif; font-size:13px }
+    </style>
+  </head>
+  <body>
+    <div style='padding:8px; color:#cbd5e1; font-family:Arial,helvetica; font-size:14px'>
+      <strong>How to read this network</strong>
+      <div style='margin-top:8px; display:flex; gap:12px; align-items:center'>
+        <div class='legend'><span style='display:inline-block;width:12px;height:12px;background:#1f77b4;margin-right:6px;border-radius:2px;'></span>PERSON</div>
+        <div class='legend'><span style='display:inline-block;width:12px;height:12px;background:#2ca02c;margin-right:6px;border-radius:2px;'></span>ORGANIZATION</div>
+        <div class='legend'><span style='display:inline-block;width:12px;height:12px;background:#ff7f0e;margin-right:6px;border-radius:2px;'></span>LOCATION</div>
+      </div>
+      <div style='margin-top:8px; font-size:13px'>
+        <strong>Relationship types:</strong> <em>CALL</em> = communication, <em>PAID</em> = financial transfer, <em>SEEN_AT</em> = location association, <em>ASSOCIATED_WITH</em> = generic association
+      </div>
+    </div>
+    <div id="mynetwork"></div>
+    <script>
+      const nodes = new vis.DataSet([{"id": "PERSON_001", "label": "Rohit Sharma Anil Mehta", "group": "PERSON", "title": "Rohit Sharma Anil Mehta", "value": 48, "color": "#1f77b4"}, {"id": "PERSON_002", "label": "Vikas Patil", "group": "PERSON", "title": "Vikas Patil", "value": 58, "color": "#1f77b4"}, {"id": "ORGANIZATION_001", "label": "Andheri East", "group": "ORGANIZATION", "title": "Andheri East", "value": 21, "color": "#2ca02c"}, {"id": "LOCATION_001", "label": "Andheri East", "group": "LOCATION", "title": "Andheri East", "value": 32, "color": "#ff7f0e"}, {"id": "ORGANIZATION_002", "label": "Suresh Traders", "group": "ORGANIZATION", "title": "Suresh Traders", "value": 32, "color": "#2ca02c"}, {"id": "PERSON_003", "label": "Patil Chandivali Shared", "group": "PERSON", "title": "Patil Chandivali Shared", "value": 21, "color": "#1f77b4"}, {"id": "LOCATION_002", "label": "Chandivali", "group": "LOCATION", "title": "Chandivali", "value": 37, "color": "#ff7f0e"}, {"id": "PERSON_004", "label": "Malad West", "group": "PERSON", "title": "Malad West", "value": 21, "color": "#1f77b4"}, {"id": "LOCATION_003", "label": "Malad West", "group": "LOCATION", "title": "Malad West", "value": 36, "color": "#ff7f0e"}, {"id": "ORGANIZATION_003", "label": "Rohit", "group": "ORGANIZATION", "title": "Rohit", "value": 21, "color": "#2ca02c"}, {"id": "ORGANIZATION_004", "label": "Vikas", "group": "ORGANIZATION", "title": "Vikas", "value": 21, "color": "#2ca02c"}, {"id": "PERSON_005", "label": "Patil Manish Shah", "group": "PERSON", "title": "Patil Manish Shah", "value": 21, "color": "#1f77b4"}, {"id": "PERSON_006", "label": "Patil Neha Kapoor", "group": "PERSON", "title": "Patil Neha Kapoor", "value": 36, "color": "#1f77b4"}, {"id": "PERSON_007", "label": "Sharma Mehul", "group": "PERSON", "title": "Sharma Mehul", "value": 21, "color": "#1f77b4"}, {"id": "PERSON_008", "label": "Patil Short", "group": "PERSON", "title": "Patil Short", "value": 21, "color": "#1f77b4"}, {"id": "PERSON_009", "label": "Shah Transfer", "group": "PERSON", "title": "Shah Transfer", "value": 21, "color": "#1f77b4"}, {"id": "ORGANIZATION_005", "label": "Andheri East Rohit", "group": "ORGANIZATION", "title": "Andheri East Rohit", "value": 21, "color": "#2ca02c"}]);
+      const edges = new vis.DataSet([{"from": "PERSON_001", "to": "PERSON_002", "label": "ASSOCIATED_WITH", "title": "ASSOCIATED_WITH"}, {"from": "PERSON_001", "to": "PERSON_001", "label": "CALLED", "title": "CALLED"}, {"from": "PERSON_001", "to": "ORGANIZATION_002", "label": "PAID", "title": "PAID"}, {"from": "PERSON_001", "to": "LOCATION_001", "label": "SEEN_AT", "title": "SEEN_AT"}, {"from": "PERSON_002", "to": "ORGANIZATION_002", "label": "PAID", "title": "PAID"}, {"from": "PERSON_002", "to": "PERSON_006", "label": "TAGGED_WITH", "title": "TAGGED_WITH"}, {"from": "PERSON_002", "to": "LOCATION_003", "label": "ASSOCIATED_WITH", "title": "ASSOCIATED_WITH"}, {"from": "PERSON_002", "to": "LOCATION_001", "label": "SEEN_AT", "title": "SEEN_AT"}, {"from": "LOCATION_002", "to": "PERSON_006", "label": "SEEN_AT", "title": "SEEN_AT"}, {"from": "LOCATION_002", "to": "LOCATION_002", "label": "SEEN_AT", "title": "SEEN_AT"}, {"from": "LOCATION_003", "to": "LOCATION_003", "label": "SEEN_AT", "title": "SEEN_AT"}]);
+      const container = document.getElementById('mynetwork');
+      const data = { nodes: nodes, edges: edges };
+      const options = {
+        physics: { enabled: true, stabilization: { enabled: true, iterations: 250 }, barnesHut: { gravitationalConstant: -2500, springLength: 180 } },
+        nodes: { shape: 'dot', size: 18, font: { color: '#ffffff', size: 16 }, borderWidth: 2 },
+        edges: { color: { color:'#9aa4ae' }, font: { align: 'horizontal', size: 12, color: '#e6eef3' }, smooth: { enabled: true, type: 'dynamic' } },
+        interaction: { hover: true, multiselect: false, dragNodes: true, zoomView: true },
+        layout: { improvedLayout: true }
+      };
+      const network = new vis.Network(container, data, options);
+      // emphasize top influencer visually
+      const top = "PERSON_002";
+      if (top !== null && nodes.get(top)) {
+        const node = nodes.get(top);
+        nodes.update({id: top, size: (node.value || node.size || 20) + 36, borderWidth: 4});
+      }
+      // expose selection to parent window via postMessage for integration if desired
+      network.on('selectNode', function(params) {
+        const nodeId = params.nodes && params.nodes.length? params.nodes[0]: null;
+        if (nodeId) { window.parent.postMessage({type:'threadvault_select', node: nodeId}, '*'); }
+      });
+    </script>
+  </body>
+</html>
